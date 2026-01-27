@@ -24,7 +24,7 @@ class QuizDetailPage extends StatefulWidget {
 
 class _QuizDetailPageState extends State<QuizDetailPage> {
   int currentIndex = 0;
-  bool get isLastCard => currentIndex == widget.lesson.items.length - 1;
+  bool get isLastCard => currentIndex == questions.length - 1;
   Map<String, bool> results = {};
 
   late List <VocabWord> allWords;
