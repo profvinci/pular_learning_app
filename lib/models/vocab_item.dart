@@ -24,6 +24,9 @@ class VocabItem implements QuizItem{
   String get displayText => phrase;
 
   @override
+  String get displayTrans => translation;
+
+  @override
   List<String> get acceptedAnswers => acceptableTranslations;
 
   @override

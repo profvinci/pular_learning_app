@@ -62,7 +62,7 @@ class _WordTypeState extends State<TypingWidget> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             const SizedBox(height: 8),
-            Text('Please translate this word: '),
+            Text('Please translate this: '),
             const SizedBox(height: 8),
             Center(
               child: Row(
@@ -107,7 +107,7 @@ class _WordTypeState extends State<TypingWidget> {
                           Navigator.pop(context);
                           widget.onAnswered(widget.question.isCorrect ?? false);
                         },        
-                        child: const Text("Ok"),
+                        child: const Text("NEXT"),
                       )
                     ],
                   ),

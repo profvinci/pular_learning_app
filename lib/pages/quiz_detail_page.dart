@@ -87,6 +87,7 @@ class _QuizDetailPageState extends State<QuizDetailPage> {
           onAnswered: (bool isCorrect){
             setState(() {
               results[focus.id] = isCorrect;
+              if (!isLastCard) currentIndex++;
             });
           },
         );
@@ -132,11 +133,6 @@ class _QuizDetailPageState extends State<QuizDetailPage> {
                     },
                     child: const Text('View Results'),
                   ),
-  
-                ElevatedButton(
-                  onPressed: currentIndex < widget.lesson.items.length - 1 ? () {setState(() {currentIndex++;});} : null, 
-                  child: const Text('Next'),
-                ),
               ],
             ),
           ),

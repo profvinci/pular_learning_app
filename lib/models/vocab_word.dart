@@ -19,6 +19,9 @@ class VocabWord implements QuizItem {
   String get displayText => text;
 
   @override
+  String get displayTrans => translation;
+
+  @override
   List<String> get acceptedAnswers => acceptableTranslations;
 
   @override

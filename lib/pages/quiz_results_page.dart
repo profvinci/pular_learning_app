@@ -23,7 +23,7 @@ class QuizResultsPage extends StatelessWidget{
         children: [
           Padding(
             padding: const EdgeInsets.all(24.0),
-            child: Text('Your Score: $score / ${questions.length}', 
+            child: Text('Your Score: ${((score/questions.length)*100).round()}% - $score / ${questions.length}', 
               style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
           ),
           Expanded(
@@ -47,7 +47,7 @@ class QuizResultsPage extends StatelessWidget{
           ElevatedButton(
             onPressed: () {
               Navigator.pop(context);
-              Navigator.pop(context);
+              Navigator.pop(context, true);
             } ,
             child: const Text('Finish'),
           ),
