@@ -7,6 +7,7 @@ import 'package:flutter_application_1/models/vocab_word.dart';
 import 'package:flutter_application_1/pages/quiz_results_page.dart';
 import '../models/lesson.dart';
 import '../widgets/typing.dart';
+import '../widgets/speaking.dart';
 import '../models/quiz_question.dart';
 
 
@@ -66,7 +67,13 @@ class _QuizDetailPageState extends State<QuizDetailPage> {
         id: 'phraseTyping_${pt.phrase}',
         type: QuizQuestionType.phraseTyping,
         item: pt)),
-  //List<Widget> speakPhrase ...
+
+      //phrase speaking
+      ...speakPhrases.map((ps) => QuizQuestion(
+        id: 'phaseSpeaking_${ps.phrase}',
+        type: QuizQuestionType.phraseSpeech,
+        item: ps)),
+
     ];
 
     //shuffle entire list
@@ -93,7 +100,16 @@ class _QuizDetailPageState extends State<QuizDetailPage> {
         );
 
       case QuizQuestionType.phraseSpeech:
-        const SizedBox();
+        questionWidget = SpeakingWidget(
+          key: ValueKey(focus.id),
+          question: focus,
+          onAnswered: (bool isCorrect){
+            setState(() {
+              results[focus.id] = isCorrect;
+              if (!isLastCard) currentIndex++;
+            });
+          },
+        );
     }
 
     return Scaffold(

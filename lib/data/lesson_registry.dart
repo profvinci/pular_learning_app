@@ -1,9 +1,9 @@
 //Answers what lessons exist in this app
 
-import 'package:flutter_application_1/data/lesson2_data.dart';
-
 import '../models/lesson.dart';
 import 'lesson1_data.dart';
+import 'lesson2_data.dart';
+
 //add all lessons here
 
 final List<Lesson> allLessons = [
