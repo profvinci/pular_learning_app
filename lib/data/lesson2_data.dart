@@ -103,10 +103,11 @@ VocabItem(
     phrase: 'Accee hakkee.', 
     phraseAudio: 'assets/audio/MP3/Lesson2/lesson2_phrase8.mp3', 
     imagePath: 'assets/images/lesson2_phrase8.jpg', 
-    translation: "Please excuse me.",
+    translation: "Please excuse me/Sorry.",
     acceptableTranslations: [
       "excuse me",
-      "please excuse me"
+      "please excuse me",
+      "sorry"
     ],
     words: [
       VocabWord(text: 'Accee', wordAudio: 'assets/audio/MP3/Accee.mp3', translation: '(Plural or formal) Stop/Cease/Allow/Leave (it)',
